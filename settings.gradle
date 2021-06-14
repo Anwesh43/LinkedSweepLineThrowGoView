@@ -1,0 +1,3 @@
+include ':sweeplinethrowgoview'
+include ':app'
+rootProject.name = "LinkedSweepLineThrowGoView"
