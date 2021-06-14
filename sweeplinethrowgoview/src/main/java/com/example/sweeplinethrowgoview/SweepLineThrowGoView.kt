@@ -39,6 +39,9 @@ fun Canvas.drawSweepLineThrowGo(scale : Float, w : Float, h : Float, paint : Pai
     val sc4 : Float = scale.divideScale(3, parts)
     val sc5 : Float = scale.divideScale(4, parts)
     val r : Float = size / rFactor
+    if (sc1 <= 0) {
+        return
+    }
     save()
     translate(w / 2, h / 2)
     save()
