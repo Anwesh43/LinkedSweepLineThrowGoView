@@ -214,4 +214,13 @@ class SweepLineThrowGoView(ctx : Context) : View(ctx) {
             }
         }
     }
+
+    companion object {
+
+        fun create(activity : Activity) : SweepLineThrowGoView {
+            val view : SweepLineThrowGoView = SweepLineThrowGoView(activity)
+            activity.setContentView(view)
+            return view
+        }
+    }
 }
