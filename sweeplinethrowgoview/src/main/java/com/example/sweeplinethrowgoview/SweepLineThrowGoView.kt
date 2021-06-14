@@ -24,6 +24,7 @@ val strokeFactor : Float = 90f
 val sizeFactor : Float = 5.9f
 val delay : Long = 20
 val deg : Float = 90f
+val rFactor : Float = 5.6f
 val backColor : Int = Color.parseColor("#BDBDBD")
 
 fun Int.inverse() : Float = 1f / this
@@ -37,7 +38,7 @@ fun Canvas.drawSweepLineThrowGo(scale : Float, w : Float, h : Float, paint : Pai
     val sc3 : Float = scale.divideScale(2, parts)
     val sc4 : Float = scale.divideScale(3, parts)
     val sc5 : Float = scale.divideScale(4, parts)
-    val r : Float = size / 9
+    val r : Float = size / rFactor
     save()
     translate(w / 2, h / 2)
     save()
@@ -46,7 +47,7 @@ fun Canvas.drawSweepLineThrowGo(scale : Float, w : Float, h : Float, paint : Pai
     restore()
     for (j in 0..1) {
         save()
-        rotate(-90f * (1 - 2 * j) * sc3)
+        rotate(-deg * (1 - 2 * j) * sc3)
         translate(0f, (h / 2 + size) * sc4)
         drawLine(0f, 0f, 0f, size * sc2, paint)
         restore()
